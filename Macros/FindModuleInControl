@@ -1,0 +1,18 @@
+var findModuleInControls = function(moduleName) {
+
+    var controls = document.getElementsByClassName('control-tool');
+    var controlsArray = [].slice.call(controls);
+    
+    for (var index = 0; index < controlsArray.length; index++) {
+      var control = controlsArray[index];
+      if (control.dataset.tool == moduleName) {
+         return control; 
+      }
+    }
+    
+    return null;
+}
+//change the name to the needed module
+var xpTally = findModuleInControls('xp-tally');
+
+xpTally.click();
